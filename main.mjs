@@ -51,13 +51,12 @@ import readline from 'readline'
         else if (method == "promise") {
             promiseOperation(a, b, operation)
                 .then(result => console.log(`Wynik (promise) ${result}`))
-            
+                .catch(err => console.error(err))
+                .finally(() => rl.close())         
         }
-
-
-
-
-
-
-
+        else{
+            console.log("Wybierz metode obliczania")
+            rl.close()
+        }
     }
+    main()
